@@ -1,11 +1,9 @@
-<center> <h1>Svelte template with Tailwind CSS</h1> </center>
+# Svelte template with Tailwind CSS
 
-<center>
-  <div style="display:flex">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/199px-Svelte_Logo.svg.png" />
-    <img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" />
-  </div>
-</center>
+<div style="display:flex">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/199px-Svelte_Logo.svg.png" />
+  <img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" />
+</div>
 
 <br>
 
@@ -14,20 +12,20 @@
 Setting up Tailwind with Svelte is really simple, just install necessary dependencies:
 
 ```bash
-npm i -D svelte-preprocess tailwindcss postcss postcss-load-config autoprefixer
+npm i -D svelte-preprocess tailwindcss postcss autoprefixer
 ```
 
 Create your configuration files
 
 ```bash
-npx tailwindcss init -p
+npx tailwindcss init
 ```
 
 Configure **svelte-preprocess** in `rollup.config.js`
 
 ```js
 // ...
-import sveltePreprocess from 'svelte-preprocess';
+import sveltePreprocess from 'svelte-preprocess'
 
 // ...
 
@@ -35,57 +33,45 @@ export default {
   // ...
   plugins: [
     svelte({
-      preprocess: sveltePreprocess({ postcss: true }),
       // ...
+      preprocess: sveltePreprocess({
+        sourceMap: !production,
+        postcss: {
+          plugins: [require('tailwindcss'), require('autoprefixer')()],
+        },
+      }),
     }),
     // ...
   ],
   // ...
-};
+}
 ```
 
-Next, import Tailwind styles into a component and add it to App.svelte
-
-_\*Tailwind styles must be imported into a separate component so that changes can be immediately reflected in the browser._
+Next, add tailwind styles into to App.svelte
 
 ```svelte
-<!-- ./src/Components/Tailwind.svelte -->
-
-<style global>
-  @import 'tailwindcss/base';
-
-  @import 'tailwindcss/components';
-
-  @import 'tailwindcss/utilities';
-</style>
-```
-
-```svelte
-<!-- App.svelte -->
-
 <script>
-  import Tailwind from './components/Tailwind.svelte';
-
   export let name;
 </script>
-
-<Tailwind />
 
 <main>
   <h1>Hello {name}!</h1>
   <p> Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
+
+<style lang="postcss" global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+</style>
 ```
 
-Finally, configure purge in `tailwind.config.js`:
+Finally, add purge and JIT mode in `tailwind.config.js`:
 
 ```js
 module.exports = {
-  purge: {
-    enabled: !process.env.ROLLUP_WATCH,
-    mode: 'all',
-    content: ['./public/index.html', './src/**/*.svelte'],
-  },
+  mode: 'jit',
+  purge: ['./public/index.html', './src/**/*.svelte'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -94,7 +80,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}
 ```
 
 <br>
