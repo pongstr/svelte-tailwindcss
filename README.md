@@ -1,5 +1,7 @@
 # Svelte template with Tailwind CSS
 
+<br>
+
 <div style="display:flex">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/199px-Svelte_Logo.svg.png" />
   <img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" />
@@ -7,21 +9,29 @@
 
 <br>
 
-## Setup
+## Install Tailwind CSS with Svelte
 
-Setting up Tailwind with Svelte is really simple, just install necessary dependencies:
+Setting up Tailwind CSS in a Svelte project.
 
-```bash
+<ol>
+  <li>
+    <p>Install necessary dependencies:</p>
+
+```sh
 npm i -D svelte-preprocess tailwindcss postcss autoprefixer
 ```
 
-Create your configuration files
+  </li>
+  <li>
+    <p>Run the init command to generate the <code>tailwind.config.js</code> file:</p>
 
-```bash
+```sh
 npx tailwindcss init
 ```
 
-Configure **svelte-preprocess** in `rollup.config.js`
+  </li>
+  <li>
+    <p>Configure <b>svelte-preprocess</b> in your <code>rollup.config.js</code> file:</p>
 
 ```js
 // ...
@@ -37,7 +47,7 @@ export default {
       preprocess: sveltePreprocess({
         sourceMap: !production,
         postcss: {
-          plugins: [require('tailwindcss'), require('autoprefixer')()],
+          plugins: [require('tailwindcss')(), require('autoprefixer')()],
         },
       }),
     }),
@@ -47,7 +57,9 @@ export default {
 }
 ```
 
-Next, add tailwind styles into to App.svelte
+  </li>
+  <li>
+    <p>Add the Tailwind directives to your <code>App.svelte</code>:</p>
 
 ```svelte
 <script>
@@ -66,31 +78,29 @@ Next, add tailwind styles into to App.svelte
 </style>
 ```
 
-Finally, add purge and JIT mode in `tailwind.config.js`:
-
+  </li>
+  <li>
+    <p>Finally, add the paths to all of your template files in your <code>tailwind.config.js</code> file:</p>
+    
 ```js
 module.exports = {
-  mode: 'jit',
-  purge: ['./public/index.html', './src/**/*.svelte'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./public/index.html', './src/**/*.svelte'],
   theme: {
-    extend: {},
-  },
-  variants: {
     extend: {},
   },
   plugins: [],
 }
 ```
+  </li>
+</ol>
 
 <br>
 
-## Get started with this template
+## Get started
 
 Install the dependencies...
 
 ```bash
-cd Svelte-Tailwind
 npm install
 ```
 
@@ -100,8 +110,16 @@ npm install
 npm run dev
 ```
 
-## Building and running in production mode
+### Building and running in production mode
 
 ```bash
 npm run build
+```
+
+### Using TypeScript
+
+This template comes with a script to set up a TypeScript development environment, run:
+
+```bash
+node scripts/setupTypeScript.js
 ```
