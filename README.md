@@ -9,6 +9,16 @@
 
 <br>
 
+## Table of contents
+
+- [Installation](#install-tailwind-css-with-svelte)
+- [Get started](#get-started)
+  - [Production mode](#building-and-running-in-production-mode)
+  - [Using TypeScript](#using-typescript)
+- [Donations](#donations)
+
+<br>
+
 ## Install Tailwind CSS with Svelte
 
 Setting up Tailwind CSS in a Svelte project.
@@ -123,3 +133,10 @@ This template comes with a script to set up a TypeScript development environment
 ```bash
 node scripts/setupTypeScript.js
 ```
+
+<br>
+
+## Donations
+
+[![](https://img.shields.io/badge/-paypal-white?style=for-the-badge&logo=paypal)](https://www.paypal.com/paypalme/jhancavm)
+
