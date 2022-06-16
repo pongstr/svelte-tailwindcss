@@ -1,45 +1,32 @@
 {
-  "name": "svelte-app",
+  "name": "svelte-ts",
   "version": "1.0.0",
+  "description": "",
   "private": true,
+  "keywords": [],
+  "author": "Pongstr <twiz.tickler@gmail.com>",
+  "license": "ISC",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "start": "yarn clean && yarn build:workers && yarn workspace @codecrumble/app dev",
+    "build": "yarn build:workers; yarn build:app",
+    "build:app": "yarn workspace @codecrumble/app build",
+    "build:workers": "yarn workspace @codecrumble/workers build",
+    "clean": "rm -rf app/public/app/main app/public/app/worker",
+    "deploy": "yarn clean && yarn build && npx firebase deploy --only hosting:codecrumb;"
   },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
-    "@rollup/plugin-replace": "^4.0.0",
-    "@rollup/plugin-typescript": "^8.0.0",
-    "@tailwindcss/forms": "^0.5.2",
-    "@tailwindcss/line-clamp": "^0.4.0",
-    "@tailwindcss/typography": "^0.5.2",
-    "@tsconfig/svelte": "^2.0.0",
-    "autoprefixer": "^10.4.4",
-    "postcss": "^8.4.12",
-    "postcss-nested": "^5.0.6",
-    "rollup": "^2.3.4",
-    "rollup-plugin-css-only": "^3.1.0",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "sirv-cli": "^2.0.0",
-    "svelte": "^3.0.0",
-    "svelte-check": "^2.0.0",
-    "svelte-preprocess": "^4.0.0",
-    "tailwindcss": "^3.0.23",
-    "tslib": "^2.0.0",
-    "typescript": "^4.0.0"
+  "dependencies": {},
+  "devDependencies": {},
+  "workspaces": [
+    "./app",
+    "./worker",
+    "./electron"
+  ],
+  "engines": {
+    "node": "16",
+    "yarn": "1.22"
   },
-  "dependencies": {
-    "@popperjs/core": "^2.11.5",
-    "@rgossiaux/svelte-headlessui": "^1.0.2",
-    "@rollup/plugin-alias": "^3.1.9",
-    "short-uuid": "^4.2.0",
-    "svelte-hero-icons": "^4.1.3",
-    "svelte-popperjs": "^1.2.10",
-    "svelte-spa-router": "^3.2.0"
+  "resolutions": {
+    "bl": "^1.2.3",
+    "node-fetch": "^2.6.7"
   }
 }

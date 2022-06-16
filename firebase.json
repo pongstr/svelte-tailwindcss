@@ -1,0 +1,14 @@
+{
+  "hosting": [
+    {
+      "target": "codecrumble",
+      "public": "./app/public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "codecrumb",
+      "public": "./app/public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    }
+  ]
+}

@@ -1,6 +1,18 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "node_modules": true,
+    "*/node_modules": true,
+    "**/node_modules": true
+  },
   "svelte.plugin.css.enable": false,
   "svelte.plugin.css.documentSymbols.enable": false,
   "svelte.plugin.css.diagnostics.enable": false,
-  "svelte.plugin.css.documentColors.enable": false
+  "svelte.plugin.css.documentColors.enable": false,
+  "svelte.plugin.svelte.diagnostics.enable": false
 }

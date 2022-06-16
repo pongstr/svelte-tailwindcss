@@ -1,0 +1,47 @@
+{
+  "name": "@codecrumble/workers",
+  "version": "1.0.0",
+  "private": true,
+  "license": "ISC",
+  "main": "dist/main.js",
+  "document": "dist/documents.js",
+  "workspace": "dist/workspaces.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "dependencies": {
+    "bytes": "^3.1.2",
+    "monaco-editor": "^0.31.0",
+    "pouchdb": "^7.2.2",
+    "pouchdb-find": "^7.2.2",
+    "short-uuid": "^4.2.0",
+    "string-length": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-flow": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@rollup/plugin-alias": "^3.1.8",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@tsconfig/svelte": "^2.0.1",
+    "@types/pouchdb": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.4.1",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.4.1",
+    "rollup": "^2.61.1",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-terser": "^7.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.5.2"
+  }
+}
