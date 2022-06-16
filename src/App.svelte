@@ -1,17 +1,29 @@
-<script>
-  export let name;
+<script lang="ts">
+  import Router from 'svelte-spa-router';
+  import Profiles from './pages/profiles.svelte';
+  import Dashboard from './pages/dashboard.svelte';
+  import Home from './pages/home.svelte';
+  import Snippet from './pages/snippet.svelte';
+  import Location from './pages/location.svelte';
+
+  const routes = {
+    '/': Home,
+    '/dashboard': Dashboard,
+    '/snippet': Snippet,
+    '/location': Location,
+    '/profiles': Profiles,
+  };
 </script>
 
-<main class="text-center py-12 max-w-xs mx-auto sm:max-w-none">
-  <h1 class="text-red-400 text-6xl uppercase leading-loose font-thin">Hello {name}!</h1>
-  <p class="text-stone-700 mt-4">
-    Visit the <a class="text-sky-600 hover:underline" href="https://svelte.dev/tutorial">
-    Svelte tutorial</a> to learn how to build Svelte apps.
-  </p>
-</main>
+<Router {routes} />
 
 <style lang="postcss" global>
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  .divider {
+    @apply bg-gray-400 mx-2 my-4 border-t border-t-gray-300 border-b border-b-gray-50;
+    height: 0;
+  }
 </style>
