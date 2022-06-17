@@ -105,6 +105,5 @@
       </ul>
     </div>
   </div>
-
   <DashboardRouter params={{ workspaceId: params.workspaceId, title }} />
 </DashboardMain>

@@ -12,10 +12,16 @@
 
 <nav class="main-toolbar">
   <div class="toolbar-navigator">
-    <button>
+    <button
+      disabled={window.history.length - 1 === 0}
+      on:click={() => history.back()}
+    >
       <Icon src={ChevronLeft} size="22" outline />
     </button>
-    <button>
+    <button
+      disabled={window.history.length - 1 === 0}
+      on:click={() => history.forward()}
+    >
       <Icon src={ChevronRight} size="22" outline />
     </button>
 

@@ -20,7 +20,7 @@
   import { Button } from '@/components'
   import { workspaceStore } from '@/store'
 
-  $: workspaces = $workspaceStore.collection as WorkspacesModelType[]
+  $: workspaces = ($workspaceStore.collection as WorkspacesModelType[]) ?? []
   $: createDialog = false
 
   let showProfile: boolean = new Boolean($workspaceStore.profiles).valueOf()
@@ -43,6 +43,11 @@
 
   onMount(() => {
     window.name = 'workspaces'
+
+    if (workspaces.length > 0) {
+      return
+    }
+
     workspaceStore.listWorkspace()
   })
 </script>
