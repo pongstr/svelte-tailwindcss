@@ -1,0 +1,364 @@
+.heroicon ~ span:not(.heroicon)
+  display: inline-block
+  margin-left: 8px
+
+.heroicon ~ h2,
+.heroicon ~ h3,
+.heroicon ~ h4,
+.heroicon ~ h5,
+.heroicon ~ h6
+  margin-left: 8px
+
+button .heroicon ~ span
+  margin-left: 0
+
+// Context Menu
+// ===============
+.theme-light .context-menu
+  background-color: rgba(var(--rgb-gray-100), 0.85)
+
+  &__divider
+    background-color: rgba(var(--rgb-gray-200), 0.35)
+
+  &__item:hover
+    color: var(--blackout)
+    background-color: rgba(var(--secondary-rgb-color), 0.25)
+
+.theme-dark .context-menu
+  background-color: rgba(var(--rgb-blackout), 0.95)
+
+  &__divider
+    background-color: rgba(var(--rgb-gray-200), 0.35)
+
+  &__item:hover
+    color: var(--blackout)
+    background-color: rgba(var(--secondary-rgb-color), 1)
+
+  &__item:hover svg
+    color: rgba(var(--rgb-blackout), 0.75)
+
+.context-menu
+  position: fixed
+  display: block
+  min-width: 250px
+  padding: calc(var(--spacing)/2)
+  border-radius: calc(var(--border-radius) / 2)
+  box-shadow: 2px 2px 5px 0 rgba(var(--rgb-blackout), 0.55)
+  overflow: hidden
+
+  & a, & a:hover, & a:active, & a:visited
+    color: var(--gray-100)
+
+  &__item
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    border-radius: calc(var(--border-radius) / 4)
+    padding: calc(var(--spacing)/4) calc(var(--spacing)/2)
+    cursor: pointer
+
+  &__item svg,
+  &__content svg
+    color: rgba(var(--rgb-gray-200), 0.75)
+
+  // &__item:hover
+  //   color: var(--blackout)
+  //   background-color: var(--secondary-color)
+
+  // &__item:hover a
+  //   color: var(--blackout)
+
+  // &__item:hover svg
+  //   color: rgba(var(--rgb-blackout), 0.75)
+
+  &__item,
+  &__item:hover
+    transition: background-color .1s linear
+
+  &__divider
+    height: 1px
+    padding: 0
+    margin-top: calc(var(--spacing)/2)
+    margin-bottom: calc(var(--spacing)/2)
+
+  &__content
+    padding: calc(var(--spacing)/4) calc(var(--spacing)/2)
+
+  &__content,
+  &__content:hover
+    background-color: none
+
+  &__item--disabled,
+  &__item--disabled:hover,
+  &__item--disabled:hover svg
+    cursor: not-allowed
+    color: var(--gray-300)
+    background-color: transparent
+    opacity: 0.75
+
+// Callout
+.callout
+  display: block
+  padding: var(--spacing)
+  margin-top: calc(var(--spacing) / 2)
+  margin-bottom: var(--spacing)
+  font-size: 85%
+  border-radius: calc(var(--border-radius) / 2)
+  border-left-width: 6px
+  border-left-style: solid
+  border-top-left-radius: 6px
+  border-bottom-left-radius: 6px
+  background-color: rgba(var(--rgb-blackout), 0.25)
+
+  & > h4, & > h5, & > h6
+    margin: 0
+
+  &--warning
+    border-left-color: var(--warning-color)
+
+  &--warning h4
+    color: var(--warning-color)
+
+  &--info
+    border-left-color: var(--info-color)
+
+  &--info h4
+    color: var(--info-color)
+
+
+// EditorJS Styling
+// ================
+
+::selection
+  color: var(--gray-100)
+  text-shadow: 0 1px 1px var(--gray-400)
+  background-color: var(--primary-color)
+
+.codex-editor
+  font-size: 16px
+  font-weight: normal
+  line-height: 1.8
+
+.ce-block__content,
+.ce-toolbar__content
+  max-width: 728px
+
+.ce-inline-toolbar
+  padding: calc(var(--spacing) / 3)
+  border-radius: calc(var(--spacing) / 2)
+  border-color: var(--blackout)
+  background-color: var(--blackout)
+
+  & button
+    padding-left: 6px
+    padding-right: 6px
+    border: 0 none
+    border-radius: 4px
+
+  & button:hover
+    color: var(--success-color)
+
+
+.ce-inline-toolbar__dropdown
+  border-right-color: var(--gray-300)
+
+.ce-inline-toolbar__dropdown:hover
+  color: var(--success-color)
+  background-color: var(--gray-400)
+
+.ce-conversion-toolbar
+  margin-top: 10px
+  background-color: var(--blackout)
+  border-color: var(--blackout)
+
+.ce-conversion-tool__icon
+  bacgkround-color: var(--gray-400)
+
+.ce-conversion-tool:hover
+  color: var(--gray-100)
+  background-color: var(--gray-400)
+
+.ce-inline-tool-input
+  border-top-color: var(--gray-400)
+
+.ce-block--selected .ce-block__content
+  color: var(--gray-100)
+  text-shadow: 0 1px 1px var(--gray-400)
+  background-color: rgba(var(--primary-rgb-color), 0.5)
+
+.ce-toolbar__settings-btn
+  color: var(--gray-100)
+  background-color: var(--gray-300)
+
+  &:hover
+    color: var(--success-color)
+
+.ce-settings,
+.ce-settings__default-zone
+  border-radius: calc(var(--spacing) / 2)
+  border-color: var(--blackout)
+  background-color: var(--blackout)
+
+  & .ce-settings__button,
+  & .cdx-settings-button
+    color: var(--gray-200)
+
+  & .ce-settings__button:hover,
+  & .cdx-settings-button:hover
+    color: var(--success-color)
+    background-color: var(--gray-400)
+
+  & .ce-settings__button--delete,
+  & .ce-settings__button--delete:hover
+    color: var(--gray-100)
+
+.badge
+  display: inline-block
+  padding: 1px 8px
+  margin-top: 4px
+  margin-bottom: 4px
+  font-size: 85%
+  border-radius: 6px
+  background-color: rgba(var(--rgb-gray-300), 0.35)
+  transition: background-color .2s ease
+
+  & ~ .badge
+    margin-left: 4px
+
+  &:hover
+    background-color: rgba(var(--rgb-gray-300), 0.95)
+    transition: background-color .2s ease
+
+// Settings Section
+// ===
+
+.theme-light
+  .settings-section
+    background-color: rgba(var(--rgb-gray-200), 0.05)
+
+.theme-dark
+  .settings-section
+    background-color: rgba(var(--rgb-blackout), 0.25)
+
+.settings-container
+  padding: var(--spacing)
+
+.settings-section
+  margin: var(--spacing) 0
+  padding: var(--spacing)
+  border-radius: calc(var(--border-radius) / 2)
+
+  @media screen and (min-width: 1000px)
+    max-width: 840px
+
+.settings-section .heading
+  margin: 0 0 0 8px
+
+.settings-section header
+  display: flex
+  align-items: center
+  justify-content: flex-start
+
+  & h2, & h3
+    color: var(--primary)
+
+.settings-section section,
+.settings-section p
+  max-width: 600px
+
+.settings-section p
+  font-size: 13px
+
+.progress-bar
+  position: relative
+  width: 500px
+  max-width: 100%
+  height: 8px
+  margin: var(--spacing) 0 calc(var(--spacing) * 3)
+  border: 0
+  background-color: var(--gray-300)
+  border-radius: var(--border-radius)
+
+  &:before,
+  &:after
+    position: absolute
+    top: 10px
+    font-size: 85%
+
+  &:before
+    left: 5px
+    content: attr(data-usage)
+
+  &:after
+    right: 5px
+    content: attr(data-quota)
+
+.progress-bar__progress
+  position: relative
+  height: 100%
+  border-radius: var(--border-radius)
+  background-color: var(--success-color)
+
+  &--warn
+    background-color: var(--warning-color)
+  &--danger
+    background-color: var(--danger-color)
+
+.alert
+  display: block
+  max-width: 500px
+  margin-top: var(--spacing)
+  padding: var(--spacing)
+  font-size: 85%
+  border-radius: calc(var(--border-radius) / 2)
+  background-color: transparent
+
+  & header
+    display: flex
+    align-items: center
+    justify-content: flex-start
+
+  // & header h2
+  // & header h3
+  // & header h4,
+  // & header h5
+    // margin: 0 0 0 8px
+    // font-size: 18px
+
+  & p:last-of-type
+    margin-bottom: 0
+
+  &--warning
+    color: var(--blackout)
+    background-color: var(--warning-color)
+
+
+// Tabs
+// ===
+.tabs
+  display: flex
+
+.tabs a
+  text-decoration: none
+
+.tabs > .dropdown > summary,
+.tabs > a
+  padding: 1rem 2rem
+  flex: 0 1 auto
+  color: var(--gray-300)
+  border-bottom: 2px solid var(--gray-200)
+  text-align: center
+
+
+.tabs > a[aria-current="page"],
+.tabs > a.active,
+.tabs > a:hover
+  opacity: 1
+  border-bottom: 2px solid var(--gray-300)
+
+.tabs > a[aria-current="page"],
+.tabs > a.active
+  border-color: var(--primary-color)
+
+.tabs.is-full a
+  flex: 1 1 auto

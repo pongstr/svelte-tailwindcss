@@ -1,0 +1,1 @@
+../../../worker/src/documents/types.d.ts

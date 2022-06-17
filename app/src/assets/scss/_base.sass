@@ -1,0 +1,235 @@
+*,
+*:before,
+*:after
+  box-sizing: border-box
+  outline: 0 none
+
+*
+  scrollbar-width: thin
+  scrollbar-color: var(--secondary-color) transparent
+
+*::-webkit-scrollbar
+  width: 3px
+  height: 3px
+
+*::-webkit-scrollbar-track
+  background: var(--palette-bg-selection)
+
+*::-webkit-scrollbar-thumb
+  background-color: var(--secondary-color)
+  border: 0 none
+
+*::-webkit-scrollbar-track
+  border-radius: 4px
+  border-radius: 4px
+  background: var(--gray)
+
+::placeholder
+  color: rgba(255, 255, 255, 0.3)
+
+html,
+body,
+#app
+  width: 100%
+  height: 100%
+  overflow: hidden
+  user-select: none
+
+html,
+body
+  margin: 0
+  padding: 0
+  font-family: var(--font-family-sans)
+  line-height: var(--line-height)
+  font-size: var(--font-size)
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+a,
+a:active,
+a:visited
+  text-decoration: none
+  transition: color .2s ease
+
+a:focus,
+a:hover
+  transition: color .2s ease
+
+a:focus
+  outline: 1px dotted var(--gray-500)
+
+button, [type="button"], [type="reset"], [type="submit"]
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  padding: calc(var(--spacing) / 3) var(--spacing)
+  font-weight: 500
+  color: var(--gray-200)
+  line-height: 1.55
+  cursor: pointer
+  border-radius: var(--border-radius)
+  border: 2px solid var(--gray-300)
+  background-color: transparent
+
+  &,
+  &:hover,
+  &:active,
+  &:focus
+    transition: background-color .2s ease, color .2s ease, opacity .2s ease
+
+  &:hover
+    background-color: rgba(var(--secondary-rgb-color), 0.15)
+
+  &:active
+    opacity: 0.55
+
+
+hr
+  display: block
+  clear: both
+  margin: var(--spacing) auto
+  border: 0 none
+  border-top: 1px solid rgba(var(--rgb-blackout), 0.35)
+
+label
+  color: var(--gray-200)
+
+input,
+select,
+textarea,
+label.checkbox-button
+  box-sizing: border-box
+  display: inline-block
+  padding: calc(var(--spacing) / 3) var(--spacing)
+  margin: 4px 8px 4px
+  color: var(--gray-100)
+  border: 1px solid var(--gray-300)
+  background-color: transparent
+  background-color: rgba(var(--secondary-rgb-color), 0.15)
+  border-radius: calc(var(--border-radius) / 3)
+  border-radius: calc(var(--border-radius) / 3)
+  transition: background-color .2s ease, color .2s ease
+
+  &:focus,
+  &:focus-within
+    color: var(--secondary-color)
+    background-color: var(--blackout)
+    transition: background-color .2s ease, color .2s ease
+
+input:not(input[type="checkbox"]):not(input[type="radio"])
+  height: 34px
+
+textarea
+  padding: 12px var(--spacing) calc(var(--spacing) / 2)
+
+.form-control
+  position: relative
+
+.form-control label
+  margin-left: calc(var(--spacing) / 2)
+  font-weight: 600
+  font-size: 75%
+  text-transform: uppercase
+
+.form-control input,
+.form-control textarea
+  display: block
+  width: 100%
+  margin: calc(var(--spacing) / 2) 0
+  margin-bottom: var(--spacing)
+
+label.checkbox-button
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  opacity: 0.75
+  span
+    display: inline-block
+    padding-right: 4px
+
+.theme-light
+  --text-color-100: var(--gray-200)
+  --text-color-200: var(--gray-300)
+  --text-color-300: var(--gray-400)
+  --text-primary: var(--primary)
+  --text-secondary: var(--secondary)
+  --text-danger: var(--danger-color)
+  --text-success: var(--success-color)
+  --text-warning: var(--warning-color)
+  --text-info: var(--info-color)
+  --text-link: var(--primary-color)
+  --text-link-active: var(--primary-color)
+  --text-link-visited: var(--primary-color)
+  --text-link-hover: var(--primary-color)
+  --text-link-focus: var(--secondary-color)
+  --bg-color: var(--gray-100)
+  color: var(--text-color-100)
+  background-color: var(--bg-color)
+
+.theme-dark
+  --text-color-100: var(--gray-100)
+  --text-color-200: var(--gray-200)
+  --text-color-300: var(--gray-300)
+  --text-primary: var(--primary)
+  --text-secondary: var(--secondary)
+  --text-danger: var(--danger-color)
+  --text-success: var(--success-color)
+  --text-warning: var(--warning-color)
+  --text-info: var(--info-color)
+  --text-link: var(--primary-color)
+  --text-link-active: var(--primary-color)
+  --text-link-visited: var(--primary-color)
+  --text-link-hover: var(--primary-color)
+  --text-link-focus: var(--secondary-color)
+  --bg-color: var(--gray-400)
+  color: var(--text-color-200)
+  background-color: var(--bg-color)
+
+a, a:active, a:visited
+  color: var(--text-link)
+
+a:hover
+  color: var(--text-link-hover)
+
+a:focus
+  color: var(--text-link-hover)
+
+.text-100
+  color: var(--text-color-100)
+
+.text-200
+  color: var(--text-color-200)
+
+.text-300
+  color: var(--text-color-300)
+
+.text-primary
+  color: var(--text-primary)
+
+.text-secondary
+  color: var(--text-secondary)
+
+.text-danger
+  color: var(--text-danger)
+
+.text-warning
+  color: var(--text-warning)
+
+.text-success
+  color: var(--text-success)
+
+.text-info
+  color: var(--text-info)
+
+.text-left
+  text-align: left
+
+.text-center
+  text-align: center
+
+.text-right
+  text-align: right
+
+.text-justify
+  text-align: justify
